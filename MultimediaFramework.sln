@@ -40,6 +40,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".config", ".config", "{4F1D
 		.config\dotnet-tools.json = .config\dotnet-tools.json
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{81EF652A-8865-4425-9425-66E70086D1CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{DB9D9684-EA59-414D-A605-3975F8AC0A6C}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +68,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3AC1635D-FF0D-403B-BCC4-597E8DABC6D6} = {D59E9A9D-6EFF-4AB1-9800-4AB217896B5A}
 		{1BD5B680-62A2-4277-985D-4EF60012E6E7} = {5CFF635D-B168-4FD1-BBCC-66DECE91C5F0}
+		{DB9D9684-EA59-414D-A605-3975F8AC0A6C} = {81EF652A-8865-4425-9425-66E70086D1CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B1D182AF-C959-45C3-9231-4F993D513C86}

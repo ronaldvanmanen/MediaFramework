@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - v*
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    name: ${{ matrix.platform.name }}
+    runs-on: ${{ matrix.platform.os }}
+    strategy:
+      matrix:
+        platform:
+         - { name: 'Build (Ubuntu 22.04, x64, release)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.22.04-x64, configuration: release }
+         - { name: 'Build (Ubuntu 22.04, x64, debug)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.22.04-x64, configuration: debug }
+         - { name: 'Build (Windows 2022, x64, release)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: release }
+         - { name: 'Build (Windows 2022, x64, debug)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: debug }
+         - { name: 'Build (Windows 2022, x86, release)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: release }
+         - { name: 'Build (Windows 2022, x86, debug)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: debug }
+    steps:
+    - name: Checkout Git Repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Set up DotNet
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.x'
+    - name: Set up Target DotNet
+      run: >
+        ${{ matrix.platform.build }}
+        --target install-dotnet
+        --architecture ${{ matrix.platform.architecture }}
+        --channel 7.0
+        --install-dir ./artifacts/dotnet
+        --version latest
+    - name: Restore
+      run: >
+        ${{ matrix.platform.build }}
+        --target restore
+        --configuration ${{ matrix.platform.configuration }}
+        --runtime ${{ matrix.platform.runtime }}
+        --dotnet-root ./artifacts/dotnet
+    - name: Build
+      run: >
+        ${{ matrix.platform.build }}
+        --target build
+        --configuration ${{ matrix.platform.configuration }}
+        --dotnet-root ./artifacts/dotnet
+      env: 
+        OVERRIDE_RUNTIME_IDENTIFIER: ${{ matrix.platform.runtime }}
+    - name: Test
+      run: >
+        ${{ matrix.platform.build }}
+        --target test
+        --configuration ${{ matrix.platform.configuration }}
+        --dotnet-root ./artifacts/dotnet

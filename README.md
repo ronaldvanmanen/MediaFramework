@@ -1,5 +1,8 @@
 # MediaFramework
+
 A simple media framework for .NET
+
+[![.NET](https://github.com/ronaldvanmanen/MultimediaFramework/actions/workflows/ci.yml/badge.svg)](https://github.com/ronaldvanmanen/MultimediaFramework/actions/workflows/ci.yml)
 
 ## Table of Contents
 
