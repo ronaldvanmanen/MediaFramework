@@ -17,22 +17,22 @@ jobs:
     strategy:
       matrix:
         platform:
-         - { name: 'Build (Ubuntu 22.04, x64, release)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.22.04-x64, configuration: release }
-         - { name: 'Build (Ubuntu 22.04, x64, debug)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.22.04-x64, configuration: debug }
-         - { name: 'Build (Ubuntu 20.04, x64, release)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.20.04-x64, configuration: release }
-         - { name: 'Build (Ubuntu 20.04, x64, debug)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.20.04-x64, configuration: debug }
-         - { name: 'Build (Windows 2022, x64, release)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: release }
-         - { name: 'Build (Windows 2022, x64, debug)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: debug }
-         - { name: 'Build (Windows 2022, x86, release)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: release }
-         - { name: 'Build (Windows 2022, x86, debug)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: debug }
-         - { name: 'Build (Windows 2019, x64, release)', os: windows-2019, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: release }
-         - { name: 'Build (Windows 2019, x64, debug)', os: windows-2019, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: debug }
-         - { name: 'Build (Windows 2019, x86, release)', os: windows-2019, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: release }
-         - { name: 'Build (Windows 2019, x86, debug)', os: windows-2019, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: debug }
-         - { name: 'Build (MacOS 12, x64, release)', os: macos-12, build: ./build.sh, architecture: x64, runtime: osx.12-x64, configuration: release }
-         - { name: 'Build (MacOS 12, x64, debug)', os: macos-12, build: ./build.sh, architecture: x64, runtime: osx.12-x64, configuration: debug }
-         - { name: 'Build (MacOS 11, x64, release)', os: macos-12, build: ./build.sh, architecture: x64, runtime: osx.11-x64, configuration: release }
-         - { name: 'Build (MacOS 11, x64, debug)', os: macos-12, build: ./build.sh, architecture: x64, runtime: osx.11-x64, configuration: debug }
+         - { name: 'Build (Ubuntu 22.04, x64, release)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: linux-x64, configuration: release }
+         - { name: 'Build (Ubuntu 22.04, x64, debug)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: linux-x64, configuration: debug }
+         - { name: 'Build (Ubuntu 20.04, x64, release)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: linux-x64, configuration: release }
+         - { name: 'Build (Ubuntu 20.04, x64, debug)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: linux-x64, configuration: debug }
+         - { name: 'Build (Windows 2022, x64, release)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win-x64, configuration: release }
+         - { name: 'Build (Windows 2022, x64, debug)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win-x64, configuration: debug }
+         - { name: 'Build (Windows 2022, x86, release)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win-x86, configuration: release }
+         - { name: 'Build (Windows 2022, x86, debug)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win-x86, configuration: debug }
+         - { name: 'Build (Windows 2019, x64, release)', os: windows-2019, build: .\build.cmd, architecture: x64, runtime: win-x64, configuration: release }
+         - { name: 'Build (Windows 2019, x64, debug)', os: windows-2019, build: .\build.cmd, architecture: x64, runtime: win-x64, configuration: debug }
+         - { name: 'Build (Windows 2019, x86, release)', os: windows-2019, build: .\build.cmd, architecture: x86, runtime: win-x86, configuration: release }
+         - { name: 'Build (Windows 2019, x86, debug)', os: windows-2019, build: .\build.cmd, architecture: x86, runtime: win-x86, configuration: debug }
+         - { name: 'Build (MacOS 12, x64, release)', os: macos-12, build: ./build.sh, architecture: x64, runtime: osx-x64, configuration: release }
+         - { name: 'Build (MacOS 12, x64, debug)', os: macos-12, build: ./build.sh, architecture: x64, runtime: osx-x64, configuration: debug }
+         - { name: 'Build (MacOS 11, x64, release)', os: macos-12, build: ./build.sh, architecture: x64, runtime: osx-x64, configuration: release }
+         - { name: 'Build (MacOS 11, x64, debug)', os: macos-12, build: ./build.sh, architecture: x64, runtime: osx-x64, configuration: debug }
     steps:
     - name: Checkout Git Repository
       uses: actions/checkout@v3
