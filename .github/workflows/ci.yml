@@ -25,6 +25,10 @@ jobs:
          - { name: 'Build (Windows 2022, x64, debug)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: debug }
          - { name: 'Build (Windows 2022, x86, release)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: release }
          - { name: 'Build (Windows 2022, x86, debug)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: debug }
+         - { name: 'Build (Windows 2019, x64, release)', os: windows-2019, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: release }
+         - { name: 'Build (Windows 2019, x64, debug)', os: windows-2019, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: debug }
+         - { name: 'Build (Windows 2019, x86, release)', os: windows-2019, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: release }
+         - { name: 'Build (Windows 2019, x86, debug)', os: windows-2019, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: debug }
     steps:
     - name: Checkout Git Repository
       uses: actions/checkout@v3
