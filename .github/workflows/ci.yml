@@ -19,6 +19,8 @@ jobs:
         platform:
          - { name: 'Build (Ubuntu 22.04, x64, release)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.22.04-x64, configuration: release }
          - { name: 'Build (Ubuntu 22.04, x64, debug)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.22.04-x64, configuration: debug }
+         - { name: 'Build (Ubuntu 20.04, x64, release)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.20.04-x64, configuration: release }
+         - { name: 'Build (Ubuntu 20.04, x64, debug)', os: ubuntu-22.04, build: ./build.sh, architecture: x64, runtime: ubuntu.20.04-x64, configuration: debug }
          - { name: 'Build (Windows 2022, x64, release)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: release }
          - { name: 'Build (Windows 2022, x64, debug)', os: windows-2022, build: .\build.cmd, architecture: x64, runtime: win10-x64, configuration: debug }
          - { name: 'Build (Windows 2022, x86, release)', os: windows-2022, build: .\build.cmd, architecture: x86, runtime: win10-x86, configuration: release }
