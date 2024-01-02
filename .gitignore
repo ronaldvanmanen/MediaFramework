@@ -327,9 +327,9 @@ paket-files/
 __pycache__/
 *.pyc
 
-# Cake - Uncomment if you are using it
-tools/**
-!tools/packages.config
+# Cake
+.cake/**
+!.cake/packages.config
 
 # Tabs Studio
 *.tss
@@ -388,3 +388,6 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# dotnet working folder
+.dotnet/
